@@ -15,4 +15,10 @@
     <ProjectReference Include="..\ANC.Infrastructure\ANC.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="DI\" />
+    <Folder Include="Middlewares\" />
+  </ItemGroup>
+
 </Project>

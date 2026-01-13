@@ -12,7 +12,7 @@ namespace ANC.Infrastructure.Bases
 
 			// Connection string for design-time migrations
 			// Replace with your actual connection string
-			optionsBuilder.UseNpgsql("Host=localhost;Database=ANC_DB;Username=postgres;Password=postgres");
+			optionsBuilder.UseNpgsql("Host=localhost;Database=ANC_DB;Username=postgres;");
 
 			return new ANCDbContext(optionsBuilder.Options);
 		}
