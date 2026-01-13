@@ -4,7 +4,7 @@ using ANC.Domain.Constant;
 namespace ANC.Domain.Entities
 {
 	public class ApprovalStep : BaseEntity
-	{
+{
 		public Guid RequestId { get; set; }
 		public Guid ApproverUserId { get; set; }
 		public ApprovalStatus Status { get; set; }
