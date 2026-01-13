@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ANC.Domain\ANC.Domain.csproj" />
+    <ProjectReference Include="..\ANC.Infrastructure\ANC.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

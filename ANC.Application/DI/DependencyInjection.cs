@@ -2,6 +2,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 using System.Threading.Tasks;
+using ANC.Infrastructure.Interfaces;
+using ANC.Infrastructure.Repositories;
 
 namespace ANC.Application.DI
 {
@@ -17,12 +19,12 @@ namespace ANC.Application.DI
 
 		public static void AddRepository(this IServiceCollection services)
 		{
-			// services.AddScoped<Unit, UnitOfWork>();
+			services.AddScoped<IUnitOfWork, UnitOfWork>();
 		}
 
 		private static void AddAutoMapper(this IServiceCollection services)
 		{
-			// services.AddAutoMapper(cfg => { cfg.AddMaps(Assembly.GetExecutingAssembly()); });
+			services.AddAutoMapper(cfg => { cfg.AddMaps(Assembly.GetExecutingAssembly()); });
 		}
 
 		public static void AddServices(this IServiceCollection services, IConfiguration configuration)
