@@ -4,7 +4,7 @@ namespace ANC.Domain.Models.Employee
 {
 
 	// Response
-	public class EmployeeResponseModel
+	public class EmployeeViewModel
 	{
 		public Guid Id { get; set; }
 		public Guid UserId { get; set; }

@@ -1,0 +1,13 @@
+/home/xhuyz/ANC_BE/ANC.Domain/bin/Debug/net9.0/ANC.Domain.deps.json
+/home/xhuyz/ANC_BE/ANC.Domain/bin/Debug/net9.0/ANC.Domain.dll
+/home/xhuyz/ANC_BE/ANC.Domain/bin/Debug/net9.0/ANC.Domain.pdb
+/home/xhuyz/ANC_BE/ANC.Domain/obj/Debug/net9.0/ANC.Domain.csproj.AssemblyReference.cache
+/home/xhuyz/ANC_BE/ANC.Domain/obj/Debug/net9.0/ANC.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/xhuyz/ANC_BE/ANC.Domain/obj/Debug/net9.0/ANC.Domain.AssemblyInfoInputs.cache
+/home/xhuyz/ANC_BE/ANC.Domain/obj/Debug/net9.0/ANC.Domain.AssemblyInfo.cs
+/home/xhuyz/ANC_BE/ANC.Domain/obj/Debug/net9.0/ANC.Domain.csproj.CoreCompileInputs.cache
+/home/xhuyz/ANC_BE/ANC.Domain/obj/Debug/net9.0/ANC.Domain.sourcelink.json
+/home/xhuyz/ANC_BE/ANC.Domain/obj/Debug/net9.0/ANC.Domain.dll
+/home/xhuyz/ANC_BE/ANC.Domain/obj/Debug/net9.0/refint/ANC.Domain.dll
+/home/xhuyz/ANC_BE/ANC.Domain/obj/Debug/net9.0/ANC.Domain.pdb
+/home/xhuyz/ANC_BE/ANC.Domain/obj/Debug/net9.0/ref/ANC.Domain.dll
