@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ANC.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fc2f4ccaf71d8909eae156475240ed02a2f93ffb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c8fa8bf374ab168b96ddf17c591e631be2dcb32")]
 [assembly: System.Reflection.AssemblyProductAttribute("ANC.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ANC.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

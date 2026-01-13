@@ -1,6 +1,4 @@
-﻿
-
-using ANC.Domain.Utils;
+﻿using ANC.Domain.Utils;
 using System.Reflection;
 
 namespace ANC.Domain.Constant

@@ -1,5 +1,4 @@
 using ANC.Domain.Bases;
-using System;
 
 namespace ANC.Domain.Entities
 {

@@ -1,0 +1,111 @@
+# ================================
+# .NET / ASP.NET Core
+# ================================
+
+# Build results
+bin/
+obj/
+out/
+
+# Rider / Visual Studio / VS Code
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ================================
+# OS generated files
+# ================================
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ================================
+# Logs
+# ================================
+logs/
+*.log
+
+# ================================
+# Test results
+# ================================
+TestResults/
+coverage/
+*.trx
+*.coverage
+*.coveragexml
+
+# ================================
+# ASP.NET Core
+# ================================
+
+# Secrets & certificates
+**/secrets.json
+**/*.pfx
+**/*.snk
+
+# User secrets (dev only)
+**/Properties/launchSettings.json
+
+# HTTPS dev cert
+**/.aspnet/
+
+# ================================
+# NuGet
+# ================================
+packages/
+.nuget/
+*.nupkg
+*.snupkg
+project.lock.json
+
+# ================================
+# Environment files
+# ================================
+.env
+.env.*
+!.env.example
+
+# ================================
+# Docker
+# ================================
+docker-compose.override.yml
+**/docker-compose.override.yml
+
+# ================================
+# EF Core
+# ================================
+**/Migrations/*.cs
+!**/Migrations/InitialCreate.cs
+
+# ================================
+# Nix / direnv (rất hợp với bạn 😄)
+# ================================
+.direnv/
+.result
+result
+.nix-profile
+.cache/
+
+# ================================
+# JetBrains Rider specific
+# ================================
+*.sln.iml
+
+# ================================
+# Misc
+# ================================
+_ReSharper*
+*.DotSettings.user
+

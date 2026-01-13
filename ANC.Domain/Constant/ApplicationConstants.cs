@@ -1,6 +1,4 @@
-﻿
-
-namespace ANC.Domain.Constant
+﻿namespace ANC.Domain.Constant
 {
 
 	public class ApplicationConstants
