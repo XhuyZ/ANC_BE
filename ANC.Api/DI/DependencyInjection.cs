@@ -39,43 +39,33 @@ namespace ANC.Api.DI
 									});
 			});
 		}
-public static void ConfigSwagger(this IServiceCollection services)
-{
-	services.AddSwaggerGen(c =>
-	{
-		c.SwaggerDoc("v1", new OpenApiInfo
+		public static void ConfigSwagger(this IServiceCollection services)
 		{
-			Title = "ANC API",
-			Version = "v1",
-			Description = "Attendance & Clinic Management API"
-		});
+			services.AddSwaggerGen(options =>
+			{
+				options.SwaggerDoc("v1", new OpenApiInfo
+				{
+					Title = "ANC API",
+					Version = "v1",
+					Description = "Attendance & Clinic Management API"
+				});
 
-		// // Nếu dùng JWT
-		// c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-		// {
-		// 	Name = "Authorization",
-		// 	Type = SecuritySchemeType.Http,
-		// 	Scheme = "bearer",
-		// 	BearerFormat = "JWT",
-		// 	In = ParameterLocation.Header
-		// });
+				options.AddSecurityDefinition("bearer", new OpenApiSecurityScheme
+				{
+					Type = SecuritySchemeType.Http,
+					Scheme = "bearer",
+					BearerFormat = "JWT",
+					Description = "JWT Authorization header using the Bearer scheme."
+				});
 
-		// c.AddSecurityRequirement(new OpenApiSecurityRequirement
-		// {
-		// 	{
-		// 		new OpenApiSecuritySchemeReference
-		// 		{
-		// 			Reference = new OpenApiReference
-		// 			{
-		// 				Type = ReferenceType.SecurityScheme,
-		// 				Id = "Bearer"
-		// 			}
-		// 		},
-		// 		Array.Empty<string>()
-		// 	}
-		// });
-	});
-}		public static void AddDatabase(this IServiceCollection services, IConfiguration configuration)
+				options.AddSecurityRequirement(document => new OpenApiSecurityRequirement
+				{
+					[new OpenApiSecuritySchemeReference("bearer", document)] = []
+				});
+			});
+		}
+
+public static void AddDatabase(this IServiceCollection services, IConfiguration configuration)
 		{
 			services.AddDbContext<ANCDbContext>(options =>
 			{
