@@ -13,6 +13,5 @@ namespace ANC.Application.MapperProfile
 			CreateMap<Branch, BranchViewModel>();
 			CreateMap<BranchModifyModel, Branch>();
 		}
-
 	}
 }
