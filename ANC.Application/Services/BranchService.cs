@@ -23,7 +23,7 @@ namespace ANC.Application.Services
 		}
 		public async Task<List<BranchViewModel>> GetAllBranch()
 		{
-			var branchList = await _unitOfWork.GetRepository<Branch>().GetAllByPropertyAsync(includeProperties: "", tracked: false);
+			var branchList = await _unitOfWork.GetRepository<Branch>().GetAllByPropertyAsync(includeProperties: "WorkLocations", tracked: false);
 
 			var result = _mapper.Map<List<BranchViewModel>>(branchList);
 

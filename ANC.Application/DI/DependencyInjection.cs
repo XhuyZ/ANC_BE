@@ -4,6 +4,8 @@ using System.Reflection;
 using System.Threading.Tasks;
 using ANC.Infrastructure.Interfaces;
 using ANC.Infrastructure.Repositories;
+using ANC.Application.Services;
+using ANC.Application.Interfaces;
 
 namespace ANC.Application.DI
 {
@@ -31,7 +33,7 @@ namespace ANC.Application.DI
 		{
 			// services.AddScoped<IPolicyService, PolicyService>();
 			// services.AddScoped<IPolicyTypeService, PolicyTypeService>();
-			// services.AddScoped<IComissionService, ComissionService>();
+			services.AddScoped<IBranchService, BranchService>();
 		}
 	}
 }
