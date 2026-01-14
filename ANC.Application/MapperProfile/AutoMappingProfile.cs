@@ -11,6 +11,7 @@ namespace ANC.Application.MapperProfile
 		public AutoMappingProfile()
 		{
 			CreateMap<Branch, BranchViewModel>();
+			CreateMap<BranchModifyModel, Branch>();
 		}
 
 	}

@@ -29,6 +29,52 @@ namespace ANC.Application.Services
 
 			return result;
 		}
+		public async Task<BranchViewModel> CreateBranch(BranchModifyModel request)
+		{
+			var branch = _mapper.Map<Branch>(request);
+
+			branch.IsActive = true;
+			branch.CreatedTime = DateTime.UtcNow;
+
+			await _unitOfWork.GetRepository<Branch>().AddAsync(branch);
+			await _unitOfWork.SaveAsync();
+
+			return _mapper.Map<BranchViewModel>(branch);
+		}
+
+		// public async Task<BranchViewModel> UpdateBranch(BranchModifyModel request)
+		// {
+		// 	var repo = _unitOfWork.GetRepository<Branch>();
+		//
+		// 	var branch = await repo.GetByIdAsync(request.BranchId);
+		// 	if (branch == null || branch.IsDeleted)
+		// 		throw new Exception("Branch not found");
+		//
+		// 	_mapper.Map(request, branch);
+		// 	branch.UpdatedAt = DateTime.UtcNow;
+		//
+		// 	repo.Update(branch);
+		// 	await _unitOfWork.SaveAsync();
+		//
+		// 	return _mapper.Map<BranchViewModel>(branch);
+		// }
+		//
+		// public async Task<bool> SoftDeleteBranch(Guid id)
+		// {
+		// 	var repo = _unitOfWork.GetRepository<Branch>();
+		//
+		// 	var branch = await repo.GetByIdAsync(id);
+		// 	if (branch == null || branch.IsDeleted)
+		// 		return false;
+		//
+		// 	branch.IsDeleted = true;
+		// 	branch.UpdatedAt = DateTime.UtcNow;
+		//
+		// 	repo.Update(branch);
+		// 	await _unitOfWork.SaveAsync();
+		//
+		// 	return true;
+		// }
 	}
 }
 

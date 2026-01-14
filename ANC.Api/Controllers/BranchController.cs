@@ -25,6 +25,13 @@ namespace ANC.Api.Controllers
 			var response = await _branchService.GetAllBranch();
 			return Ok(BaseResponse<List<BranchViewModel>>.OkDataResponse(response, "Get List Branches Successfully"));
 		}
+		[HttpPost]
+		public async Task<IActionResult> Create([FromBody] BranchModifyModel request)
+		{
+			var result = await _branchService.CreateBranch(request);
+			return Ok(BaseResponse<BranchViewModel>
+					.OkDataResponse(result, "Create branch successfully"));
+		}
 
 	}
 }

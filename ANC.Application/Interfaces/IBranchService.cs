@@ -7,6 +7,9 @@ namespace ANC.Application.Interfaces
 	{
 
 		Task<List<BranchViewModel>> GetAllBranch();
+		Task<BranchViewModel> CreateBranch(BranchModifyModel request);
+		// Task<BranchViewModel> UpdateBranch(BranchModifyModel request);
+		// Task<bool> SoftDeleteBranch(Guid id);
 	}
 }
 
