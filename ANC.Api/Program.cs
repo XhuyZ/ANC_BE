@@ -8,7 +8,7 @@ builder.Configuration
 		.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 		.AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
 		.AddEnvironmentVariables();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapiok
 builder.Services.AddControllers();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddEndpointsApiExplorer();
