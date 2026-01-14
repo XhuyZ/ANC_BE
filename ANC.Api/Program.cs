@@ -1,4 +1,3 @@
-
 using ANC.Api.DI;
 using ANC.Api.Middlewares;
 using ANC.Application.DI;
@@ -16,12 +15,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration);
-builder.Services.AddSwaggerGen();
 builder.Services.AddHttpClient();
-//builder.WebHost.ConfigureKestrel(options =>
-//{
-//    options.ListenAnyIP(8080); // Mở HTTP trên cổng 7000 cho tất cả interface
-//});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -36,10 +30,9 @@ else
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-	c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
+	c.SwaggerEndpoint("/swagger/v1/swagger.json", "ANC API v1");
 	c.RoutePrefix = "swagger";
 });
-
 app.UseHttpsRedirection();
 app.UseCors("CorsPolicy");
 app.UseAuthentication();

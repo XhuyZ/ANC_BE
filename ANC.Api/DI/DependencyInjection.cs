@@ -1,5 +1,6 @@
 using ANC.Infrastructure.Bases;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi;
 
 namespace ANC.Api.DI
 {
@@ -38,57 +39,43 @@ namespace ANC.Api.DI
 									});
 			});
 		}
-		public static void ConfigSwagger(this IServiceCollection services)
+public static void ConfigSwagger(this IServiceCollection services)
+{
+	services.AddSwaggerGen(c =>
+	{
+		c.SwaggerDoc("v1", new OpenApiInfo
 		{
-			// config swagger
-			services.AddSwaggerGen(c =>
+			Title = "ANC API",
+			Version = "v1",
+			Description = "Attendance & Clinic Management API"
+		});
 
-			{
-				c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
-				{
-					Version = "v1",
-					Title = "API"
+		// // Nếu dùng JWT
+		// c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+		// {
+		// 	Name = "Authorization",
+		// 	Type = SecuritySchemeType.Http,
+		// 	Scheme = "bearer",
+		// 	BearerFormat = "JWT",
+		// 	In = ParameterLocation.Header
+		// });
 
-				});
-
-				//var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-				//var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-				//c.IncludeXmlComments(xmlPath);
-				// Thêm JWT Bearer Token vào Swagger
-				c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-				{
-					In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-					Description = "JWT Authorization header sử dụng scheme Bearer.",
-					Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
-					Name = "Authorization",
-					Scheme = "bearer"
-				});
-				c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
-					{
-										{
-												new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-												{
-														Reference = new Microsoft.OpenApi.Models.OpenApiReference
-														{
-																Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
-																Id = "Bearer"
-														}
-												},
-												new string[] { }
-										}
-					});
-
-				c.OrderActionsBy((apiDesc) =>
-							{
-								if (apiDesc.HttpMethod == "POST") return "3";
-								if (apiDesc.HttpMethod == "GET") return "1";
-								if (apiDesc.HttpMethod == "PUT") return "2";
-								if (apiDesc.HttpMethod == "DELETE") return "4";
-								return "5";
-							});
-			});
-		}
-		public static void AddDatabase(this IServiceCollection services, IConfiguration configuration)
+		// c.AddSecurityRequirement(new OpenApiSecurityRequirement
+		// {
+		// 	{
+		// 		new OpenApiSecuritySchemeReference
+		// 		{
+		// 			Reference = new OpenApiReference
+		// 			{
+		// 				Type = ReferenceType.SecurityScheme,
+		// 				Id = "Bearer"
+		// 			}
+		// 		},
+		// 		Array.Empty<string>()
+		// 	}
+		// });
+	});
+}		public static void AddDatabase(this IServiceCollection services, IConfiguration configuration)
 		{
 			services.AddDbContext<ANCDbContext>(options =>
 			{
